@@ -16,6 +16,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#f1faee"
   },
   text: {
-    color:"0e1116"
+    color:"#0e1116"
   },
 });
