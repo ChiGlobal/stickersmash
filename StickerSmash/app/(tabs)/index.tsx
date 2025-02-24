@@ -29,12 +29,29 @@ export default function Index() {
     }
   }
 
+  const onReset = () => {
+    setShowAppOptions(false);
+  };
+
+  const onAddSticker = () => {
+    // we will implement this later
+  };
+
+  const onSaveImageAsync = async () => {
+    // we will implement this later
+  };
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}><ImageViewer imgSource={selectedImage || PlaceholderImage} />
       </View>
         {showAppOptions ? (
-           <View/>
+         <View style={styles.optionsContainer}>
+                <View style={styles.optionsRow}>
+                <IconButton icon="refresh" label="Reset" onPress={onReset} />
+               <CircleButton onPress={onAddSticker} />
+              <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync} />
+                   </View>
+                 </View>
         ) :
        (  <View>
         <Button
@@ -59,6 +76,14 @@ const styles = StyleSheet.create(
   footerContainer: {
     flex: 1 / 3,
     alignItems: 'center',
+  },
+  optionsContainer: {
+    position: 'absolute',
+    bottom: 60,
+  },
+  optionsRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   }
 );
