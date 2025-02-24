@@ -8,6 +8,7 @@ import IconButton from "@/components/IconButton";
 import EmojiPicker from "@/components/EmojiPicker";
 import EmojiList from "@/components/EmojiList";
 import { type ImageSource } from 'expo-image';
+import EmojiSticker from '@/components/EmojiSticker';
 
 const PlaceholderImage = require('../../assets/images/background-image.png');
 
@@ -52,7 +53,9 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}><ImageViewer imgSource={selectedImage || PlaceholderImage} />
+      {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
       </View>
+
         {showAppOptions ? (
          <View style={styles.optionsContainer}>
                 <View style={styles.optionsRow}>
