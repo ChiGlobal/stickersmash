@@ -1,8 +1,10 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons"
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function TabsLayout() {
   return (
+    <GestureHandlerRootView style={{flex:1}}>
  <Tabs 
     screenOptions={{
         tabBarActiveTintColor:"#0e1116",
@@ -24,6 +26,6 @@ export default function TabsLayout() {
     tabBarIcon: ({focused, color}) => <Ionicons name={focused? "information-circle" : "information-circle-outline"} color={color} size={25}/>}}/>
   <Tabs.Screen name="+not-found" options={{headerShown:false}} />
  </Tabs>
- 
+ </GestureHandlerRootView>
   );
 }

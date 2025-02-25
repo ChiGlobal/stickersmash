@@ -9,6 +9,7 @@ type Props = PropsWithChildren<{
 
 export default function EmojiPicker({ isVisible, children, onClose }: Props) {
   return (
+    <View>
     <Modal animationType="slide" transparent={true} visible={isVisible}>
       <View style={styles.modalContent}>
         <View style={styles.titleContainer}>
@@ -19,7 +20,7 @@ export default function EmojiPicker({ isVisible, children, onClose }: Props) {
         </View>
         {children}
       </View>
-    </Modal>
+    </Modal></View>
   );
 }
 
